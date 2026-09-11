@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "Sunridge Townhomes",
+    "rent_amount": 1565.00,
+    "bedrooms": 2,
+    "pet_friendly": true,
+    "proximity_bonus": "0.5 miles from Elementary School",
+    "contact_phone": "(559) 555-0192"
+  },
+  {
+    "id": 2,
+    "name": "Scottsmen Apartments",
+    "rent_amount": 1368.00,
+    "bedrooms": 1,
+    "pet_friendly": true,
+    "proximity_bonus": "0.7 miles from Elementary School",
+    "contact_phone": "(559) 555-0144"
+  },
+  {
+    "id": 3,
+    "name": "Maple Palace Luxury Apartments",
+    "rent_amount": 1375.00,
+    "bedrooms": 1,
+    "pet_friendly": false,
+    "proximity_bonus": "0.9 miles from Elementary School",
+    "contact_phone": "(559) 555-0145"
+  },
+  {
+    "id": 4,
+    "name": "Hunter Place",
+    "rent_amount": 1275.00,
+    "bedrooms": 2,
+    "pet_friendly": false,
+    "proximity_bonus": "0.4 miles from Elementary School",
+    "contact_phone": "(559) 555-0146"
+  },
+  {
+    "id": 5,
+    "name": "Windemere",
+    "rent_amount": 1500.00,
+    "bedrooms": 2,
+    "pet_friendly": true,
+    "proximity_bonus": "0.2 miles from Elementary School",
+    "contact_phone": "(559) 555-0147"
+  },
+  {
+    "id": 6,
+    "name": "Mirage Apartments",
+    "rent_amount": 1300.00,
+    "bedrooms": 1,
+    "pet_friendly": true,
+    "proximity_bonus": "1.2 miles from Elementary School",
+    "contact_phone": "(559) 555-0148"
+  },
+  {
+    "id": 7,
+    "name": "Woodbridge",
+    "rent_amount": 1295.00,
+    "bedrooms": 1,
+    "pet_friendly": true,
+    "proximity_bonus": "1.1 miles from Elementary School",
+    "contact_phone": "(559) 555-0149"
+  },
+  {
+    "id": 8,
+    "name": "Willow Ridge",
+    "rent_amount": 1383.00,
+    "bedrooms": 1,
+    "pet_friendly": true,
+    "proximity_bonus": "0.5 miles from Elementary School",
+    "contact_phone": "(559) 555-0150"
+  },
+  {
+    "id": 9,
+    "name": "Jackson Park Place",
+    "rent_amount": 1615.00,
+    "bedrooms": 2,
+    "pet_friendly": true,
+    "proximity_bonus": "0.5 miles from Elementary School",
+    "contact_phone": "(559) 555-1145"
+  },
+  {
+    "id": 10,
+    "name": "Jackson Park Place",
+    "rent_amount": 1585.00,
+    "bedrooms": 1,
+    "pet_friendly": true,
+    "proximity_bonus": "0.5 miles from Elementary School",
+    "contact_phone": "(559) 555-1145"
+  },
+  {
+    "id": 11,
+    "name": "2325 E Shaw Ave",
+    "rent_amount": 1450.00,
+    "bedrooms": 2,
+    "pet_friendly": false,
+    "proximity_bonus": "0.5 miles from Elementary School",
+    "contact_phone": "(559) 555-1160"
+  },
+  {
+    "id": 12,
+    "name": "4375 N Chestnut Ave, # 4373, Fresno, CA 93726",
+    "rent_amount": 1250.00,
+    "bedrooms": 2,
+    "pet_friendly": false,
+    "proximity_bonus": "0.3 miles from Elementary School",
+    "contact_phone": "(559) 555-1161"
+  },
+  {
+    "id": 13,
+    "name": "4281 N Chestnut Ave, # 102, Fresno, CA 93726",
+    "rent_amount": 1350.00,
+    "bedrooms": 2,
+    "pet_friendly": false,
+    "proximity_bonus": "0.2 miles from Elementary School",
+    "contact_phone": "(559) 555-1162"
+  },
+  {
+    "id": 14,
+    "name": "REFLECTIONS",
+    "rent_amount": 1525.00,
+    "bedrooms": 2,
+    "pet_friendly": true,
+    "proximity_bonus": "0.5 miles from Elementary School",
+    "contact_phone": "(559) 555-1163"
+  },
+  {
+    "id": 15,
+    "name": "River Park Villas",
+    "rent_amount": 1500.00,
+    "bedrooms": 1,
+    "pet_friendly": true,
+    "proximity_bonus": "0.4 miles from Elementary School",
+    "contact_phone": "(559) 555-1163"
+  }
+]
