@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenantShield - Action Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Unified Mobile Container Shell -->
+    <main class="mobile-viewport">
+        
+        <!-- Dashboard Navigation Banner -->
+        <header class="dashboard-header">
+            <a href="index.html" class="back-link">⬅️ Reset</a>
+            <h1 class="dashboard-title">⚖️ Your Action Plan</h1>
+            <div class="shield-badge">🛡️ Protected</div>
+        </header>
+
+        <!-- Dynamic AI Translation Banner -->
+        <section class="reality-check-card alert-danger">
+            <h2 class="card-label">🤖 LAYMAN'S REALITY CHECK (AI ENGINE):</h2>
+            <p id="aiRealityCheck" class="reality-text">
+                Processing your documents... Your unedited financial and calendar variables will populate below shortly.
+            </p>
+        </section>
+
+        <!-- The Landlord Timeout Countdown Visualizer -->
+        <section class="countdown-card">
+            <h3 class="countdown-label">⏳ THE LANDLORD COUNTDOWN TIMEOUT</h3>
+            <div class="progress-bar-container">
+                <div id="countdownProgressBar" class="progress-bar-fill" style="width: 100%;"></div>
+            </div>
+            <div class="countdown-metrics">
+                <span id="daysRemainingCount" class="days-highlight">-- Days Left to Act</span>
+                <span id="criticalDeadlineDate" class="date-highlight">Critical Deadline: Loading...</span>
+            </div>
+        </section>
+
+        <!-- Chronological 3-Stage Renter Battle Tracker -->
+        <section class="stages-timeline-container">
+            
+            <!-- STAGE 1: The Proactive Window -->
+            <div id="stage1Card" class="timeline-stage-card status-closed">
+                <div class="stage-header">
+                    <span class="stage-icon">🔒</span>
+                    <h4>STAGE 1: PROACTIVE SAVINGS WINDOW</h4>
+                </div>
+                <p class="stage-details">Timeline: 90 Days Prior to Lease End</p>
+                <p id="stage1Dates" class="stage-dates">Status: Closed / Passed</p>
+            </div>
+
+            <!-- STAGE 2: The Active Leverage Zone -->
+            <div id="stage2Card" class="timeline-stage-card status-active">
+                <div class="stage-header">
+                    <span class="stage-icon">🔥</span>
+                    <h4>STAGE 2: THE ACTIVE LEVERAGE ZONE</h4>
+                </div>
+                <p class="stage-details">Status: CURRENTLY OPEN</p>
+                <p class="stage-strategy">Strategy: Alternative Market Leads Active Now</p>
+                
+                <!-- Matchmaking Lead Inject Node Container -->
+                <div id="matchmakingLeadsContainer" class="leads-display-box">
+                    <p class="loading-text">Matching curated Fresno alternatives...</p>
+                </div>
+            </div>
+
+            <!-- STAGE 3: The Monthly Penalty Leak -->
+            <div id="stage3Card" class="timeline-stage-card status-upcoming">
+                <div class="stage-header">
+                    <span class="stage-icon">⚠️</span>
+                    <h4>STAGE 3: THE MONTH-TO-MONTH PENALTY LEAK</h4>
+                </div>
+                <p class="stage-details">Status: Upcoming Danger Zone</p>
+                <p id="financialBleedCalculation" class="penalty-highlight">Compound Financial Bleed: Calculating...</p>
+                <p id="projectedYearlyLoss" class="yearly-impact-highlight">Projected Yearly Cost Impact: Calculating...</p>
+            </div>
+
+        </section>
+
+        <!-- Actionable Notice Redirection Trigger Button -->
+        <section class="action-footer">
+            <a href="notice.html" class="btn-primary" id="viewNoticeBtn">📝 BUILD INTENT-TO-VACATE OFFICIAL NOTICE TEMPLATE</a>
+        </section>
+
+    </main>
+
+    <!-- Project Pipeline Data Routers -->
+    <script src="js/app.js"></script>
+</body>
+</html>

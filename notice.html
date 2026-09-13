@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenantShield - Official Notice Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Unified Mobile Container Shell -->
+    <main class="mobile-viewport">
+        
+        <!-- Document Output Navigation Bar -->
+        <header class="notice-header">
+            <a href="dashboard.html" class="back-link">⬅️ Dashboard</a>
+            <h1 class="notice-page-title">📝 Notice Generator</h1>
+            <button id="copyNoticeBtn" class="btn-secondary">📋 COPY TEXT</button>
+        </header>
+
+        <!-- Official Legal Notice Document Box Layout -->
+        <section class="document-paper-container">
+            <article id="legalNoticeOutput" class="legal-document-text">
+                <p class="doc-line"><strong>To:</strong> <span id="docLandlordPlaceholder">[Property Management/Landlord Center Name]</span></p>
+                <p class="doc-line"><strong>Date:</strong> <span id="docCurrentDate">[Current System Date]</span></p>
+                <br>
+                <p class="doc-body">
+                    Pursuant to the explicit terms outlined within the Lease Agreement executed for the premises, 
+                    please accept this formal written document as my official notification of intent to vacate the 
+                    rental unit located at the designated premises address.
+                </p>
+                <p class="doc-body">
+                    As mandated by the standard notice provision clause discovered within the active contract parameters, 
+                    possession of the unit will be fully surrendered back to management on or before the required terminal 
+                    date of <span id="docLeaseEndPlaceholder">[Lease End Date Parameter]</span>.
+                </p>
+                <p class="doc-body">
+                    Please provide an official written acknowledgement of receipt of this notice file directly to my primary resident contact file, 
+                    and forward all final apartment walk-through inspection schedules to coordinate the return of my refundable initial security deposit collateral.
+                </p>
+                <br>
+                <p class="doc-closing">Signed,</p>
+                <p class="doc-signature-line">[ Active Resident Signature Placeholder ]</p>
+            </article>
+        </section>
+
+        <!-- Device Integration Action Footers -->
+        <footer class="notice-actions-footer">
+            <button id="setCalendarEventBtn" class="btn-primary-accent">📅 SYNC ALERTS TO MY MOBILE CALENDAR</button>
+        </footer>
+
+    </main>
+
+    <!-- Project Pipeline Data Routers -->
+    <script src="js/app.js"></script>
+</body>
+</html>
