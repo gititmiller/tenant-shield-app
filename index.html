@@ -19,17 +19,16 @@
 
         <!-- Onboarding Preference Survey Module -->
         <section class="survey-card">
-            <h2 class="section-title">📋 Renter Preferences Survey</h2>
             <form id="onboardingForm">
                 
-                <!-- Field 1: Max Financial Rent Threshold -->
-                <div class="form-group">
+                <!-- [PANEL 1] Field 1: Max Financial Rent Threshold -->
+                <div class="form-panel active-panel">
                     <label for="maxRent">Maximum Monthly Rent You Can Afford:</label>
                     <input type="number" id="maxRent" name="maxRent" placeholder="e.g. 1600" required min="0">
                 </div>
 
-                <!-- Field 2: Bedroom Inventory Needs -->
-                <div class="form-group">
+                <!-- [PANEL 2] Field 2: Bedroom Inventory Needs -->
+                <div class="form-panel">
                     <label for="desiredBedrooms">Desired Bedroom Layout:</label>
                     <select id="desiredBedrooms" name="desiredBedrooms" required>
                         <option value="1">1 BR</option>
@@ -39,64 +38,95 @@
                     </select>
                 </div>
 
-                <!-- Field 3: Family Dependents Checkbox -->
-                <div class="form-group checkbox-group">
-                    <label class="toggle-label">
-                        <input type="checkbox" id="hasDependents" name="hasDependents">
-                        <span>Moving with children / school dependents?</span>
-                    </label>
-                    <small class="field-hint">Prioritizes alternatives located near schools & parks.</small>
+                <!-- [PANEL 3] COMBINED DEPENDENTS & PETS MODULE -->
+                <div class="form-panel">
+                    <label>Household Demographics:</label>
+                    <div class="checkbox-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="hasDependents" name="hasDependents">
+                            <span>Moving with children / school dependents?</span>
+                        </label>
+                        <small class="field-hint">Prioritizes alternatives located near schools & parks.</small>
+                    </div>
+                    <div class="checkbox-group" style="margin-top: 15px;">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="hasPets" name="hasPets">
+                            <span>Moving with family pets?</span>
+                        </label>
+                        <small class="field-hint">Filters out properties with strict no-pet policies.</small>
+                    </div>
                 </div>
 
-                <!-- Field 4: Companion Animal Status Checkbox -->
-                <div class="form-group checkbox-group">
-                    <label class="toggle-label">
-                        <input type="checkbox" id="hasPets" name="hasPets">
-                        <span>Moving with family pets?</span>
-                    </label>
-                    <small class="field-hint">Filters out properties with strict no-pet policies.</small>
-                </div>
-
-                <!-- Field 5: Initial Relocation Cash Reserves -->
-                <div class="form-group">
+                <!-- [PANEL 4] Field 4: Initial Relocation Cash Reserves -->
+                <div class="form-panel">
                     <label for="movingReserves">Cash Reserved for Upfront Moving Costs:</label>
                     <input type="number" id="movingReserves" name="movingReserves" placeholder="e.g. 500" required min="0">
                     <small class="field-hint">Determines your stay-and-fight vs. relocation strategy routing.</small>
                 </div>
 
-                <!-- Field 6: Target Geography Input Nodes -->
-                <div class="form-group location-group">
+                <!-- [PANEL 5] Field 5: Target Geography Input Nodes with Strict Protocols -->
+                <div class="form-panel location-group">
                     <label>Desired Target Locations:</label>
-                    <input type="text" id="targetLocation1" name="targetLocation1" placeholder="Location 1 (Required)" required>
-                    <input type="text" id="targetLocation2" name="targetLocation2" placeholder="Location 2 (Optional)">
-                    <input type="text" id="targetLocation3" name="targetLocation3" placeholder="Location 3 (Optional)">
+                    <small class="field-hint" style="margin-bottom: 8px; color: #ffb84d;">Protocol: Enter standardized text as [City, State Name] or [5-Digit Zip Code Only]. Do not include street lines.</small>
+                    <input type="text" id="targetLocation1" name="targetLocation1" placeholder="e.g. Fresno, CA or 93721 (Required)" required>
+                    <input type="text" id="targetLocation2" name="targetLocation2" placeholder="Second Location (Optional)">
+                    <input type="text" id="targetLocation3" name="targetLocation3" placeholder="Third Location (Optional)">
                 </div>
 
-                <!-- Document Dropzone Interface Container -->
-                <div class="document-dropzone-section">
+                <!-- [PANEL 6] Document Dropzone Interface Container with Instructions -->
+                <div class="form-panel document-dropzone-section">
                     <h3 class="subsection-title">📥 Upload Verification Evidence</h3>
+                    <small class="field-hint" style="margin-bottom: 12px; color: #00b37e; display: block;">Optimized Extraction Note: Only upload pages containing lease summary structures and notice clauses (typically pages 1-3 & rate addenda). Avoid uploading complete 40+ page boilerplate packs.</small>
                     
                     <!-- File Trigger 1: Active Lease Agreement Document -->
                     <div class="file-input-wrapper">
-                        <label for="leaseUpload" class="file-dropzone-label">
-                            <span class="icon">📄</span>
-                            <span class="text">STEP 1: UPLOAD ACTIVE LEASE</span>
+                        <label for="leaseUpload" class="file-dropzone-label" id="leaseLabel">
+                            <span class="icon" id="leaseIcon">📄</span>
+                            <span class="text" id="leaseText">STEP 1: UPLOAD ACTIVE LEASE SUMMARY</span>
                         </label>
                         <input type="file" id="leaseUpload" name="leaseUpload" accept="image/*,application/pdf" required>
                     </div>
 
                     <!-- File Trigger 2: Landlord Premium / Penalty Notice -->
                     <div class="file-input-wrapper">
-                        <label for="noticeUpload" class="file-dropzone-label">
-                            <span class="icon">⚠️</span>
-                            <span class="text">STEP 2: UPLOAD LANDLORD NOTICE</span>
+                        <label for="noticeUpload" class="file-dropzone-label" id="noticeLabel">
+                            <span class="icon" id="noticeIcon">⚠️</span>
+                            <span class="text" id="noticeText">STEP 2: UPLOAD LANDLORD PREMIUM NOTICE</span>
                         </label>
                         <input type="file" id="noticeUpload" name="noticeUpload" accept="image/*,application/pdf" required>
                     </div>
                 </div>
 
-                <!-- Engine Fire Button Trigger -->
-                <button type="submit" class="btn-primary" id="launchEngineBtn">🏁 LAUNCH TENANT SHIELD ENGINE</button>
+                <!-- NEW STEP 5 INTERMEDIARY VERIFICATION PANEL -->
+                <div class="form-panel verification-screen-panel" id="verificationScreen" style="display: none;">
+                    <h3 class="subsection-title" style="color: #ffb84d;">🔍 Audit Extracted Lease Metrics</h3>
+                    <p class="field-hint" style="margin-bottom: 14px;">Confirm data metrics discovered within your documentation match your physical files. Edit any value directly to optimize accuracy.</p>
+                    
+                    <div class="form-group">
+                        <label>Extracted Current Monthly Rent ($):</label>
+                        <input type="number" id="verifyRent" value="1425">
+                    </div>
+                    <div class="form-group">
+                        <label>Extracted Landlord Premium Hike Penalty ($):</label>
+                        <input type="number" id="verifyPremium" value="250">
+                    </div>
+                    <div class="form-group">
+                        <label>Extracted Lease Expiration Date:</label>
+                        <input type="text" id="verifyEndDate" value="2026-10-26">
+                    </div>
+                    <div class="form-group">
+                        <label>Extracted Notice Window Requirement (Days):</label>
+                        <input type="number" id="verifyNoticeDays" value="30">
+                    </div>
+                    
+                    <button type="submit" class="btn-primary" id="launchEngineBtn">🏁 GENERATE REPORT & OUTCOME ROADS</button>
+                </div>
+
+                <!-- Sequential Navigation Controls Dock -->
+                <div id="surveyNavDock" class="nav-control-dock">
+                    <button type="button" id="prevStepBtn" class="btn-nav-control">⬅️ Back</button>
+                    <button type="button" id="nextStepBtn" class="btn-nav-control">Continue ➡️</button>
+                </div>
 
             </form>
         </section>

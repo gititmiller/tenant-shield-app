@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RESET & CORE MOBILE VIEWPORT SETUP
+   RESET & CORE CONTAINER VIEWPORT DESIGNS
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -15,182 +15,108 @@ body {
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    padding: 0;
+    padding: 12px;
 }
 
-/* Hard Bounding the App to a Mobile Aspect Ratio Layout Window */
-.mobile-viewport {
+/* Master Grid Structure for the Dashboard Workspace Environment */
+.dashboard-workspace-grid {
     width: 100%;
-    max-width: 420px;
+    max-width: 100%;
     background-color: #1a1a1e;
-    min-height: 100vh;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    min-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    position: relative;
+    padding: 16px;
+}
+
+/* Force the Top Deck Survey Panel to always stay full-width */
+.sidebar-panel:first-child {
+    width: 100%;
+    border-bottom: 2px dashed #29292e;
+    padding-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 /* ==========================================================================
-   BRAND HEADER & CARDS LAYOUT
+   SMART HYBRID GRID: FORCES TWO COLUMNS FOR HALF-WINDOWS AND WIDE PHONES
    ========================================================================== */
-.app-header, .dashboard-header, .notice-header {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #29292e;
-    margin-bottom: 24px;
+@media (min-width: 580px) {
+    body {
+        padding: 20px;
+    }
+
+    .dashboard-workspace-grid {
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr; /* Left column slightly wider for core content */
+        gap: 20px;
+        padding: 24px;
+        align-items: start;
+    }
+
+    /* Top Panel spans across both columns */
+    .sidebar-panel:first-child {
+        grid-column: 1 / span 2;
+        margin-bottom: 4px;
+    }
+
+    .dashboard-center-container {
+        grid-column: 1;
+    }
+
+    .contextual-explanation-panel {
+        grid-column: 2;
+        position: sticky;
+        top: 20px;
+        height: max-content;
+    }
 }
 
-.brand-title, .dashboard-title, .notice-page-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 6px;
-}
-
-.privacy-notice {
-    font-size: 12px;
-    color: #00b37e;
-    font-weight: 500;
-}
-
-.survey-card, .reality-check-card, .countdown-card, .document-paper-container {
+/* ==========================================================================
+   CARD SYSTEM & THEME SURFACES
+   ========================================================================== */
+.sidebar-panel, .survey-card, .reality-check-card, .countdown-card, .timeline-stage-card {
     background-color: #202024;
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     border: 1px solid #29292e;
 }
 
-/* ==========================================================================
-   SURVEY FORM INPUT ELEMENTS
-   ========================================================================== */
-.form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #c4c4cc;
-}
-
-input[type="number"], input[type="text"], select {
-    background-color: #121214;
-    border: 1px solid #29292e;
-    border-radius: 6px;
-    padding: 12px;
-    color: #ffffff;
+.panel-main-title {
     font-size: 16px;
-    width: 100%;
-    transition: border-color 0.2s;
-}
-
-input:focus, select:focus {
-    outline: none;
-    border-color: #00b37e;
-}
-
-.checkbox-group {
-    flex-direction: row;
-    align-items: flex-start;
-}
-
-.toggle-label {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    color: #e1e1e6;
-}
-
-.toggle-label input {
-    margin-right: 12px;
-    width: 18px;
-    height: 18px;
-    accent-color: #00b37e;
-}
-
-.field-hint {
-    font-size: 11px;
-    color: #7c7c8a;
-    margin-top: 4px;
-    display: block;
-}
-
-.location-group input {
-    margin-bottom: 10px;
-}
-
-/* ==========================================================================
-   DOCUMENT DROPZONE BUTTONS
-   ========================================================================== */
-.document-dropzone-section {
-    margin-top: 24px;
-    margin-bottom: 24px;
-}
-
-.subsection-title {
-    font-size: 16px;
-    margin-bottom: 14px;
-    color: #e1e1e6;
-}
-
-.file-input-wrapper {
-    margin-bottom: 14px;
-    position: relative;
-}
-
-.file-input-wrapper input[type="file"] {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
-
-.file-dropzone-label {
-    display: flex;
-    align-items: center;
-    background-color: #29292e;
-    border: 2px dashed #4d4d57;
-    border-radius: 6px;
-    padding: 16px;
-    justify-content: center;
-    transition: background-color 0.2s;
-}
-
-.file-dropzone-label:hover {
-    background-color: #323238;
-}
-
-.file-dropzone-label .icon {
-    font-size: 20px;
-    margin-right: 12px;
-}
-
-/* ==========================================================================
-   ALERT SYSTEM & ACTION BUTTONS
-   ========================================================================== */
-.alert-danger {
-    background-color: rgba(247, 90, 90, 0.1);
-    border: 1px solid #f75a5a;
-}
-
-.card-label {
-    font-size: 12px;
-    color: #f75a5a;
     font-weight: 700;
-    margin-bottom: 8px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
 }
 
-.reality-text {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #e1e1e6;
+/* Captured Preference Panel Top-Deck List Layout Formatting */
+.summary-data-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+}
+
+.data-item {
+    font-size: 13px;
+    color: #c4c4cc;
+    background-color: #121214;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #29292e;
+}
+
+/* ==========================================================================
+   BUTTON STRUCTURAL INTEGRATIONS
+   ========================================================================== */
+.dynamic-button-stack {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
 }
 
 .btn-primary {
@@ -199,7 +125,7 @@ input:focus, select:focus {
     border: none;
     border-radius: 6px;
     padding: 16px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     width: 100%;
     cursor: pointer;
@@ -213,112 +139,99 @@ input:focus, select:focus {
     background-color: #00875f;
 }
 
-.btn-secondary {
+.btn-secondary-action {
     background-color: #29292e;
-    color: #e1e1e6;
     border: 1px solid #4d4d57;
+    color: #e1e1e6;
+    padding: 12px;
     border-radius: 6px;
-    padding: 8px 16px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-    cursor: pointer;
-}
-
-.btn-primary-accent {
-    background-color: #004d3b;
-    border: 1px solid #00b37e;
-    color: #00b37e;
-    padding: 16px;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: 700;
     width: 100%;
     cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.btn-secondary-action:hover {
+    border-color: #00b37e;
+    color: #00b37e;
+    background-color: rgba(0, 179, 126, 0.02);
+}
+
+.small-utility-link {
+    font-size: 12px;
+    color: #00b37e;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.small-utility-link:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    color: #7c7c8a;
+    text-decoration: none;
+    font-size: 13px;
 }
 
 /* ==========================================================================
-   THE 3-STAGE TIMELINE CARDS
+   TIMELINE METERS & TRICK DETECTORS
    ========================================================================== */
 .progress-bar-container {
     background-color: #121214;
     height: 8px;
     border-radius: 4px;
     overflow: hidden;
+    margin-top: 12px;
     margin-bottom: 12px;
 }
 
 .progress-bar-fill {
     background: linear-gradient(90deg, #00b37e, #f75a5a);
+    width: 100%;
     height: 100%;
-    transition: width 0.5s ease-in-out;
 }
 
-.timeline-stage-card {
-    background-color: #202024;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 12px;
-    border-left: 4px solid #4d4d57;
+.active-clickable-card {
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
 }
+
+.active-clickable-card:hover {
+    transform: translateY(-2px);
+    border-color: #4d4d57;
+}
+
+.status-closed { border-left: 4px solid #7c7c8a; opacity: 0.5; }
+.status-active { border-left: 4px solid #00b37e; background-color: rgba(0,179,126,0.02); }
+.status-upcoming { border-left: 4px solid #f75a5a; background-color: rgba(247,90,90,0.02); }
 
 .stage-header {
     display: flex;
     align-items: center;
-    margin-bottom: 6px;
+    font-size: 13px;
+    margin-bottom: 4px;
 }
 
-.stage-icon {
-    margin-right: 10px;
-}
-
-.status-closed {
-    opacity: 0.5;
-    border-left-color: #7c7c8a;
-}
-
-.status-active {
-    border-left-color: #00b37e;
-    background-color: rgba(0, 179, 126, 0.03);
-}
-
-.status-upcoming {
-    border-left-color: #f75a5a;
-    background-color: rgba(247, 90, 90, 0.03);
-}
+.stage-icon { margin-right: 8px; }
 
 /* ==========================================================================
-   LEGAL PAPER SHEET OUTPUT CONTEXT
+   ADVISOR VIEW & TEXT LAYOUT
    ========================================================================== */
-.document-paper-container {
-    background-color: #ffffff;
-    color: #121214;
-    border-radius: 4px;
-    padding: 30px 24px;
-    box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
+.advisor-content-body {
+    background-color: #121214;
+    border-radius: 6px;
+    padding: 16px;
+    border: 1px solid #29292e;
+    min-height: 200px;
 }
 
-.legal-document-text {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 14px;
+.advisor-hint-text {
+    font-size: 13px;
+    color: #7c7c8a;
     line-height: 1.6;
-}
-
-.doc-body {
-    margin-bottom: 16px;
-    text-align: justify;
-}
-
-/* ==========================================================================
-   Navigation Link Cleanup Patch
-   ========================================================================== */
-.back-link, .back-link:visited {
-    color: #00b37e;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: color 0.2s;
-}
-
-.back-link:hover {
-    color: #00875f;
 }
